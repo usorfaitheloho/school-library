@@ -174,44 +174,44 @@ class App
     person_id = gets.chomp.to_i
     rentals = @rental.select { |rent| rent.person.id == person_id }
     if rentals.empty?
-        puts 'No rentals found for this person.'
-      else
-        rentals.each do |rental|
-          puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
-        end
-      end
-    end
-  
-    def diplay_list(client_input)
-      case client_input
-      when '1'
-        list_books
-      when '2'
-        list_persons
-      when '6'
-        list_id_rentals
-      end
-    end
-  
-    def run
-      loop do
-        case client_input
-        when '1', '2', '6'
-          diplay_list(client_input)
-        when '3', '4', '5'
-          create_client(client_input)
-        when '7'
-          puts 'Thank you for using this app!'
-          exit(true)
-        else
-          puts "\nInvalid input \"#{client_input}\"!"
-          puts 'Please try with one of these options: '
-          ui_prompt
-          @client_input = gets.chomp
-          run
-        end
-        ui_prompt
-        @client_input = gets.chomp
+      puts 'No rentals found for this person.'
+    else
+      rentals.each do |rental|
+        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
       end
     end
   end
+
+  def diplay_list(client_input)
+    case client_input
+    when '1'
+      list_books
+    when '2'
+      list_persons
+    when '6'
+      list_id_rentals
+    end
+  end
+
+  def run
+    loop do
+      case client_input
+      when '1', '2', '6'
+        diplay_list(client_input)
+      when '3', '4', '5'
+        create_client(client_input)
+      when '7'
+        puts 'Thank you for using this app!'
+        exit(true)
+      else
+        puts "\nInvalid input \"#{client_input}\"!"
+        puts 'Please try with one of these options: '
+        ui_prompt
+        @client_input = gets.chomp
+        run
+      end
+      ui_prompt
+      @client_input = gets.chomp
+    end
+  end
+end
