@@ -3,8 +3,13 @@
 #  School Library
 
 > Implementing classes to represent student and teachers in OOP school library app.
-## Built With
 
+- Add new students or teachers.
+ - Add new books.
+ - Save records of who borrowed a given book and when.
+And all of this will be built in a beautiful and well-organized way!
+
+## Built With
 - Ruby
 - Ruby linters
 
@@ -12,7 +17,9 @@
 
 To get a local copy up and running follow these simple example steps.
 
-`git clone https://github.com/usorfaitheloho/school-library.git`
+1. `git clone https://github.com/usorfaitheloho/school-library.git`
+2. `cd school_library`
+3. `ruby main.rb`
 
 
 ## Authors
